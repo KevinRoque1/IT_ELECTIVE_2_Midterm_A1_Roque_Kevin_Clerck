@@ -6,4 +6,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Include="wwwroot\images\pictureportfolio.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\images\loan\" />
+      <Folder Include="wwwroot\images\visualdesign\" />
+      <Folder Include="wwwroot\files\" />
+    </ItemGroup>
+
 </Project>

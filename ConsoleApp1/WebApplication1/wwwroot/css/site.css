@@ -1,31 +1,69 @@
 html {
-  font-size: 14px;
+  scroll-behavior: smooth;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+/* Offset anchor jumps so the fixed mobile navbar doesn't cover headings */
+section {
+  scroll-margin-top: 70px;
+}
+
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1031; /* Higher than sidebar */
+}
+
+
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+}
+
+/* True fixed sidebar on tablet/desktop: pinned between the top and bottom
+   of the viewport using top/bottom (not height:100vh) since vh is
+   unreliable on tablets/mobile browsers with dynamic toolbars. */
+@media (min-width: 576px) {
+  .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1030;
+  }
+
+  .main-content {
+    margin-left: 260px;
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.sidebar-brand {
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+  line-height: 1.2;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.sidebar-link {
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+  transition: background-color 0.15s ease-in-out;
 }
 
-body {
-  margin-bottom: 60px;
+.sidebar-link:hover,
+.sidebar-link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.card img.card-img-top {
+  object-fit: cover;
+  height: 220px;
 }
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+/* Push content below the fixed mobile top bar so it doesn't hide under it */
+@media (max-width: 767.98px) {
+  body {
+    padding-top: 56px;
+  }
 }
