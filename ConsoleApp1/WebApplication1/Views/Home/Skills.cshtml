@@ -1,0 +1,70 @@
+﻿@{
+    var programmingSkills = ViewData["ProgrammingSkills"] as List<string>;
+    var webSkills = ViewData["WebSkills"] as List<string>;
+    var databaseSkills = ViewData["DatabaseSkills"] as List<string>;
+    var toolSkills = ViewData["ToolSkills"] as List<string>;
+}
+
+<section id="skills" class="py-5">
+    <h2 class="fw-bold mb-1"><i class="bi bi-code-slash me-2"></i>@ViewData["Title"]</h2>
+    <p class="text-muted mb-4">@ViewData["Tagline"]</p>
+
+    <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-braces text-primary me-2"></i>Programming</h5>
+                    <ul class="list-unstyled mb-0">
+                        @foreach (var skill in programmingSkills!)
+                        {
+                            <li>@skill</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-globe text-primary me-2"></i>Web Technologies</h5>
+                    <ul class="list-unstyled mb-0">
+                        @foreach (var skill in webSkills!)
+                        {
+                            <li>@skill</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-database text-primary me-2"></i>Databases</h5>
+                    <ul class="list-unstyled mb-0">
+                        @foreach (var skill in databaseSkills!)
+                        {
+                            <li>@skill</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-tools text-primary me-2"></i>Dev Tools</h5>
+                    <ul class="list-unstyled mb-0">
+                        @foreach (var skill in toolSkills!)
+                        {
+                            <li>@skill</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/skills.css" asp-append-version="true" />
+}

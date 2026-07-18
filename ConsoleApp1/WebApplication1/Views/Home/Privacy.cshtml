@@ -1,6 +1,149 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    var project3Badges = ViewData["Project3Badges"] as List<string>;
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<section id="projects" class="py-5">
+    <h2 class="fw-bold mb-1"><i class="bi bi-folder2-open me-2"></i>@ViewData["Title"]</h2>
+    <p class="text-muted mb-4">@ViewData["Tagline"]</p>
+
+    <div class="row g-4">
+
+        <!-- Project 1: Student Portal System -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@ViewData["Project1Title"]</h5>
+                    <p class="card-text">@ViewData["Project1Desc"]</p>
+                    <p class="mb-3">
+                        <span class="badge text-bg-light border me-1">@ViewData["Project1Badge"]</span>
+                    </p>
+                    <a href="@ViewData["Project1Link"]"
+                       class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: Loan Calculator -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@ViewData["Project2Title"]</h5>
+                    <p class="card-text">@ViewData["Project2Desc"]</p>
+                    <p class="mb-3">
+                        <span class="badge text-bg-light border me-1">@ViewData["Project2Badge"]</span>
+                    </p>
+                    <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#simpleCalcModal">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Visual Design Portfolio -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@ViewData["Project3Title"]</h5>
+                    <p class="card-text">@ViewData["Project3Desc"]</p>
+                    <p class="mb-3">
+                        @foreach (var badge in project3Badges!)
+                        {
+                            <span class="badge text-bg-light border me-1">@badge</span>
+                        }
+                    </p>
+                    <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#visualDesignModal">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Visual Design Portfolio modal -->
+    <div class="modal fade" id="visualDesignModal" tabindex="-1" aria-labelledby="visualDesignModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="visualDesignModalLabel">@ViewData["Project3Title"]</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="visualDesignCarousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/images/visualdesign/portfolio1.png" class="d-block w-100 rounded border" alt="About Me section">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/visualdesign/portfolio2.png" class="d-block w-100 rounded border" alt="Gallery section">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/visualdesign/portfolio3.png" class="d-block w-100 rounded border" alt="Activities section">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#visualDesignCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#visualDesignCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loan Calculator modal -->
+    <div class="modal fade" id="simpleCalcModal" tabindex="-1" aria-labelledby="simpleCalcModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="simpleCalcModalLabel">@ViewData["Project2Title"]</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="simpleCalcCarousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/images/loan/1st.png" class="d-block w-100 rounded border" alt="Screenshot 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/loan/2nd.png" class="d-block w-100 rounded border" alt="Screenshot 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/loan/3rd.png" class="d-block w-100 rounded border" alt="Screenshot 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/loan/4th.png" class="d-block w-100 rounded border" alt="Screenshot 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/loan/5th.png" class="d-block w-100 rounded border" alt="Screenshot 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/loan/6th.png" class="d-block w-100 rounded border" alt="Screenshot 6">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#simpleCalcCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#simpleCalcCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/projects.css" asp-append-version="true" />
+}
