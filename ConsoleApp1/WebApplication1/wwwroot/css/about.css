@@ -1,16 +1,19 @@
 ﻿#about .about-card {
-    border: none;
-    border-radius: 12px;
-    background-color: #f8f9fa;
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  background-color: var(--card);
 }
 
-    #about .about-card .card-title {
-        color: #0d6efd;
-        font-size: 0.95rem;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-    }
+#about .about-card .card-title {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
 
 #about p {
-    line-height: 1.7;
+  line-height: 1.75;
+  max-width: 46rem;
 }

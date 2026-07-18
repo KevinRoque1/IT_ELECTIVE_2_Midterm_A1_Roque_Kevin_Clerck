@@ -1,20 +1,22 @@
-﻿#projects .card {
-    border: none;
-    border-radius: 12px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-    #projects .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
-    }
-
-#projects .badge {
-    font-weight: 500;
+﻿#projects .card-title {
+  font-size: 1.15rem;
 }
 
 #projects .carousel-item img {
-    max-height: 480px;
-    object-fit: contain;
-    background-color: #f8f9fa;
+  max-height: 480px;
+  object-fit: contain;
+  background-color: var(--paper);
+}
+
+#projects .modal-content {
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+#projects .modal-header {
+  border-bottom-color: var(--line);
+}
+
+#projects .modal-title {
+  font-family: var(--font-display);
 }

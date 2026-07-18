@@ -1,17 +1,19 @@
 ﻿#contact .list-group-item {
-    border-left: none;
-    border-right: none;
-    padding-left: 0;
+  border-left: none;
+  border-right: none;
+  border-color: var(--line);
+  padding: 0.9rem 0;
 }
 
-    #contact .list-group-item a {
-        transition: color 0.15s ease;
-    }
+#contact .list-group-item a {
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
 
-        #contact .list-group-item a:hover {
-            color: #0d6efd !important;
-        }
+#contact .list-group-item a:hover {
+  color: var(--accent) !important;
+}
 
-#contact .btn-success {
-    border-radius: 8px;
+#contact .bi {
+  font-size: 1.15rem;
 }

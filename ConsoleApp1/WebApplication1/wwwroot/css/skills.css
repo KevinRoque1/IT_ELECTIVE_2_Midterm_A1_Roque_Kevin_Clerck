@@ -1,19 +1,16 @@
-﻿#skills .card {
-    border: none;
-    border-radius: 12px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-    #skills .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
-    }
-
-#skills .card-title {
-    font-size: 1.05rem;
+﻿#skills .card-title {
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
 }
 
 #skills ul li {
-    padding: 0.15rem 0;
-    color: #495057;
+  padding: 0.3rem 0;
+  color: var(--text);
+  font-family: var(--font-body);
+  border-bottom: 1px dashed var(--line);
+}
+
+#skills ul li:last-child {
+  border-bottom: none;
 }

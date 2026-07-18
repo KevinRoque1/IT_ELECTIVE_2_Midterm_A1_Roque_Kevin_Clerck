@@ -1,0 +1,22 @@
+#home .display-5 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+}
+
+#home h1::before {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+#home .lead {
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+#home img.rounded-circle {
+  border: 4px solid var(--card);
+  box-shadow: 0 12px 32px rgba(18, 23, 43, 0.16);
+}
